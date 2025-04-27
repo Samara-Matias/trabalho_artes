@@ -1,0 +1,9 @@
+RewriteEngine On
+
+#Acessar, realmente, as páginas e diretórios digitados pelo usuário e que existem no projeto
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Enviar tudo que não for compatível com os arquivos e diretórios do projeto para a página index.php
+#Também está sendo salvo no parâmetro 'url' o que o usuário digitou na URL do site (pode ser acessado pelo GET)
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]

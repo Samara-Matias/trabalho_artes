@@ -1,0 +1,45 @@
+│   ├── /controllers/          # Controladores (lógica de requisição/resposta)
+│   │   ├── AuthController.php
+│   │   ├── TaskController.php
+│   │   ├── ListController.php
+│   │   └── CommentController.php
+│   │
+│   ├── /models/               # Lógica de acesso a dados e regras de negócio
+│   │   ├── User.php
+│   │   ├── Task.php
+│   │   ├── TodoList.php
+│   │   └── Comment.php
+│   │
+│   ├── /core/                 # Núcleo: classes genéricas
+│   │   ├── Database.php       # Conexão com PDO
+│   │   ├── Session.php        # Manipulação de sessão
+│   │   ├── Auth.php           # Verificação de login
+│   │   └── Helper.php         # Funções auxiliares
+│
+├── /public/                   # Pasta acessível via navegador
+│   ├── /assets/               # Estilos, scripts, imagens
+│   │   ├── /css/
+│   │   ├── /js/
+│   │   └── /img/
+│   ├── index.php              # Ponto de entrada da aplicação
+│   └── .htaccess              # Redirecionamento de URL amigável
+│
+├── /views/                    # Arquivos HTML/PHP visuais
+│   ├── /auth/                 # Login, cadastro, etc.
+│   │   ├── login.php
+│   │   └── register.php
+│   ├── /dashboard/            # Painel principal do usuário
+│   │   ├── home.php
+│   │   ├── lists.php
+│   │   └── tasks.php
+│   ├── /partials/             # Componentes reutilizáveis (header, footer, etc.)
+│   │   ├── header.php
+│   │   ├── footer.php
+│   │   └── sidebar.php
+│   └── /emails/               # Templates de e-mail
+│       └── invitation.php
+│
+├── /routes/                   # Rotas da aplicação
+│   └── web.php
+│
+├── /config/                   # Configurações gerais
