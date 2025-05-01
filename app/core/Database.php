@@ -31,5 +31,48 @@
             }
             return self::$pdo;
         }
+
+        // Criando a função 'query' para poder fazer alguma ação no banco de dados e retornar o resultado dessa ação;
+        public function query ($query, $dados = []) {
+            $conexao = self::conectarDB();
+            // Preparando a query para utilizar no banco de dados
+            $stmt = $conexao->prepare($query);
+
+            // Verificando se a cosulta foi bem sucessida
+            $check = $stmt->execute($dados);
+            if ( $check ) {
+                // Capturando os dados do banco de dados -> Em forma de array associativo
+                $dadosDaConsulta = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                if( is_array( $dadosDaConsulta ) && count( $dadosDaConsulta ) ) {
+                    return $dadosDaConsulta;
+                }
+            }
+            else{
+                return false;
+            }
+        }
+
+        // Criando a função 'query' para poder fazer alguma ação no banco de dados e retornar o primeiro registro resultante da ação;
+        public function getLinhaTabela ($query, $dados = []) {
+            $conexao = self::conectarDB();
+            // Preparando a query para utilizar no banco de dados
+            $stmt = $conexao->prepare($query);
+
+            // Verificando se a cosulta foi bem sucessida
+            $check = $stmt->execute($dados);
+            if ( $check ) {
+                // Capturando os dados do banco de dados -> Em forma de array associativo
+                $dadosDaConsulta = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                if( is_array( $dadosDaConsulta ) && count( $dadosDaConsulta ) ) {
+                    return $dadosDaConsulta[0];
+                }
+            }
+            else{
+                return false;
+            }
+        }
+
     }
 ?>
