@@ -5,6 +5,13 @@
  */
 
 class Usuario extends Model {
-    
-    protected $tabela = 'usuario';
+    public function __construct(){
+        $this->tabela = 'usuario';
+        $this->orderColuna = 'userId';
+    }
+    protected $colunasPermitidas = [
+        'nomeUsuario',
+        'email',
+        'senha'
+    ];
 }

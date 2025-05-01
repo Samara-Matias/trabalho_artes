@@ -10,8 +10,7 @@ class App {
     private function separarURL() {
         // Pega a url -> caso não exista, colocamos um valor padrão (página padrão);
         $URL = $_GET['url'] ?? 'home';
-        $URL = explode('/', $URL);
-
+        $URL = explode('/', trim($URL, '/'));
         return $URL;
     }
     
@@ -25,14 +24,27 @@ class App {
         if ( file_exists($arquivoController) ) {
             require_once $arquivoController;
             $this->controllerPadrao = ucfirst($URL[0]);
+            // Removendo esse dado do array
+            unset($URL[0]);
         }
         else {
             $arquivoController = '../app/controllers/_404Controller.php';
             require_once $arquivoController;
             $this->controllerPadrao = '_404';
         }
-
+        
         $controller = new $this->controllerPadrao;
-        call_user_func_array([$controller, $this->metodoPadrao], []);
+        
+        // Verificando se determinado método existe em determinada classe para ser utilizado
+        if( !empty($URL[1]) ) {
+            if ( method_exists($controller, $URL[1]) ) {
+                $this->metodoPadrao = $URL[1];
+                // Removendo esse dado do array
+                unset($URL[1]);
+            }
+        }
+        
+        Helper::exibirDados( $URL );
+        call_user_func_array([$controller, $this->metodoPadrao], $URL);
     }
 }

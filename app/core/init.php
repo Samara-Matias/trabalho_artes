@@ -1,5 +1,11 @@
 <?php
 
+// Se for necessário utilizar uma determinada classe e o php não está encontrando, essa função será chamada
+spl_autoload_register(function($nomeClasse) {
+    $filename = '../app/models/' . ucfirst($nomeClasse) . '.php';
+    require_once $filename;
+});
+
 require_once 'config.php';
 require_once 'Helper.php';
 require_once 'Database.php';
