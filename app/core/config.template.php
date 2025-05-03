@@ -15,3 +15,5 @@
         define('BASE_URL', '');
     }
     define('BASE_PATH', __DIR__);
+    
+?>
