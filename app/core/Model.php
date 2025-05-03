@@ -4,13 +4,15 @@
     // Aqui nessa classe, deve-se criar os métodos que são comuns em cada tabela específica
     // Assim poderá ser reutilizada em cada Model espefícico de cada tabela
 class Model extends Database {
-    protected $tabela = '';
+    protected $tabela      = '';
     // Para paginação
-    protected $limite = 10;
-    protected $offset = 0;
+    protected $limite      = 10;
+    protected $offset      = 0;
     // Para ordenação
-    protected $orderTipo = 'DESC';
+    protected $orderTipo   = 'DESC';
     protected $orderColuna = 'id';
+    // Array que armazenará possíveis erros
+    public $erros          = [];
 
     // Função para retornar todos os dados da tabela ordenados de alguma forma
     public function findAll () {
@@ -97,8 +99,7 @@ class Model extends Database {
         $chaves = array_keys($dado);
 
         $query = "INSERT INTO $this->tabela (". implode(', ', $chaves) . ") VALUES (:". implode(', :', $chaves) . ")";
-        Helper::exibirDados($dado);
-        Helper::exibirDados($query);
+        
         $this->query($query, $dado);
 
         return false;
