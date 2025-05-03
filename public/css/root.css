@@ -1,3 +1,24 @@
 :root {
-    
+    /* Neutros */
+    --white              : hsl(210, 20%, 97%);
+    --light-gray         : hsl(0, 0%, 78%);
+    --dark-gray          : hsl(240, 2%, 20%);
+    --black              : hsl(240, 100%, 0.5%);
+
+    /* Destaque */
+    --accent-blue        : hsl(228, 38%, 56%);
+    --accent-blue-tint   : hsl(228, 38%, 75%);
+    --accent-blue-shade  : hsl(228, 38%, 35%);
+  
+    --accent-pink        : hsl(340, 100%, 56%);
+    --accent-pink-tint   : hsl(340, 100%, 75%);
+    --accent-pink-shade  : hsl(340, 100%, 38%);
+  
+    --accent-purple      : hsl(297, 100%, 60%);
+    --accent-purple-tint : hsl(297, 100%, 78%);
+    --accent-purple-shade: hsl(297, 100%, 40%);
+  
+    --accent-deep        : hsl(274, 82%, 54%);
+    --accent-deep-tint   : hsl(274, 82%, 73%);
+    --accent-deep-shade  : hsl(274, 82%, 34%);
 }
