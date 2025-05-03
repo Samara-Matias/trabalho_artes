@@ -6,7 +6,7 @@ spl_autoload_register(function($nomeClasse) {
     require_once $filename;
 });
 
-require_once 'config.php';
+require_once 'config.template.php';
 require_once 'Helper.php';
 require_once 'Database.php';
 require_once 'Model.php';

@@ -6,4 +6,9 @@ class Helper {
                 var_dump($dados);
         echo '</pre>';
     }
+
+    public static function redirecionar($arquivo){
+        header("Location: " . ROOT . "/" .$arquivo);
+        die;
+    }
 }
