@@ -19,7 +19,7 @@
         
         <button type="submit">Entrar</button>
     </form>
-    <a href="<?=ROOT?>">Início</a>
-    <a href="<?=ROOT?>/register">Cadastre-se</a>
+    <a href="<?=BASE_URL?>">Início</a>
+    <a href="<?=BASE_URL?>/cadastro">Cadastre-se</a>
 </body>
 </html>

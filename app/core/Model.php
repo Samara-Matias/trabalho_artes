@@ -11,8 +11,6 @@ class Model extends Database {
     // Para ordenação
     protected $orderTipo = 'DESC';
     protected $orderColuna = 'id';
-    // Para tratamento de erros
-    public $erros = [];
 
     // Função para retornar todos os dados da tabela ordenados de alguma forma
     public function findAll () {

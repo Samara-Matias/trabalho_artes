@@ -15,7 +15,7 @@ class Login extends Controller {
                 $usuarioEncontrado = $usuario->first($arr);
                 if ($usuarioEncontrado && password_verify($senha, $usuarioEncontrado->senha)) { 
                     $_SESSION['usuario'] = $usuarioEncontrado;
-                    Helper::redirecionar('home');
+                    Helper::redirecionar('dashboard');
                     exit;
                 } else {
                     $dados['erros'] = ['Email/senha incorretos'];
