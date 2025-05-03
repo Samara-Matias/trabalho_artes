@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Home page view</h1>
+    <a href="<?= BASE_URL ?>/login">Login</a>
     <a href="<?= BASE_URL ?>/cadastro">Register</a>
 </body>
 </html>
