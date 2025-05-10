@@ -43,8 +43,7 @@ class App {
                 unset($URL[1]);
             }
         }
-        
-        Helper::exibirDados( $URL );
+
         call_user_func_array([$controller, $this->metodoPadrao], $URL);
     }
 }

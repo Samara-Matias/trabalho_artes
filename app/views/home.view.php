@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
   <header class="cabecalho">
     <h1>FocusList</h1>
     <nav>
@@ -46,5 +45,8 @@
     <p>2025 FocusList. Todos os direitos reservados.</p>
   </footer>
 
+    <h1>Home page view</h1>
+    <a href="<?= BASE_URL ?>/login">Login</a>
+    <a href="<?= BASE_URL ?>/cadastro">Register</a>
 </body>
 </html>

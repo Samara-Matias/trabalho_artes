@@ -49,8 +49,9 @@
                 }
             }
             else{
-                return false;
+                return $check;
             }
+            
         }
 
         // Criando a função 'query' para poder fazer alguma ação no banco de dados e retornar o primeiro registro resultante da ação;
@@ -70,7 +71,7 @@
                 }
             }
             else{
-                return false;
+                return $check;
             }
         }
 

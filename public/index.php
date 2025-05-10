@@ -1,10 +1,11 @@
 <?php
 // CRIAÇÃO DE UM ROUTER
+require_once '../app/core/init.php';
 
 // Inicializando uma sessão -> Ela servirá para todas as páginas que forem chamadas a partir dela
-session_start();
+Helper::iniciarSessao();
 
-require '../app/core/init.php';
+
 
 $app = new App;
 $app->carregarController();
