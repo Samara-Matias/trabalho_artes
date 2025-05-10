@@ -1,10 +1,9 @@
 
-export async function httpRequest(url, options = null){
-    // para options, passe um objeto com o method, os headers, body e etc...
+export async function httpRequest(options){
+    // para options, passe um objeto com o method, url, os headers e body
     // espera PUT, DELETE, GET OU POST
-    // se GET sem options especificas, não passar options
     const returnObject = {
-            statusCode: undefined,
+            statusCode: 0,
             body: {}
         };
 
