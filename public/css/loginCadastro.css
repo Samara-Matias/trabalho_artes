@@ -1,0 +1,168 @@
+@import url(./root.css);
+
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-destaque2);
+    color: var(--black);
+}
+input,
+button {
+    font-family: var(--fonte-destaque);
+}
+
+body,
+.cadastro-form,
+.login-form,
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+body,
+.cadastro-form,
+.login-form{
+    justify-content: center;
+}
+
+body {
+    background-color: var(--black);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main{
+    width: 70vw;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    min-height: 70vh;
+    place-items: center;
+    background-color: var(--black);
+    gap: 15px;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 15px;
+}
+
+.form-image-decoration {
+    width: 100%;
+    height: 100%;
+    background-color:hsla(210,20%,97%,1);
+    background-image:
+    radial-gradient(at 46% 12%, hsla(228,100%,38%,1) 0px, transparent 50%),
+    radial-gradient(at 82% 11%, hsla(340,100%,38%,1) 0px, transparent 50%),
+    radial-gradient(at 2% 61%, hsla(296,100%,38%,1) 0px, transparent 50%),
+    radial-gradient(at 19% 97%, hsla(228,100%,38%,1) 0px, transparent 50%),
+    radial-gradient(at 91% 64%, hsla(274,100%,38%,1) 0px, transparent 50%),
+    radial-gradient(at 74% 100%, hsla(340,100%,38%,1) 0px, transparent 50%),
+    radial-gradient(at 9% 0%, hsla(274,100%,38%,1) 0px, transparent 50%);
+    border-radius: 10px;
+    border: solid 3px var(--black)
+}
+
+.form {
+    width: 80%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.cadastro-form,
+.login-form {
+    width: 100%;
+    height: 60%;
+    padding: 10px;
+}
+
+.form-header {
+    text-align: center;
+}
+.form-header > p{
+    color: var(--dark-gray);
+}
+
+.cadastro-form input,
+.login-form input,
+.form-image-decotation {
+    border: solid 3px var(--black);
+}
+
+.cadastro-form input,
+.login-form input{
+    width: 90%;
+    height: 40px;
+    padding: 0px 10px;
+    margin-bottom: 20px;
+    outline-offset: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 0px var(--black);
+    transition: box-shadow .2s ease-out,
+                transform .2s ease,
+                background-color .3s ease-out;
+}
+.cadastro-form input::placeholder,
+.login-form input::placeholder {
+    transition: color .3s ease;
+}
+
+.cadastro-form input:hover,
+.login-form input:hover {
+    background-color: var(--accent-deep-tint);
+}
+.cadastro-form input:hover,
+.login-form input:hover,
+.cadastro-form input:focus,
+.login-form input:focus {
+    box-shadow: 0px 0px 0px var(--black);
+    transform: translateY(2px);
+}
+
+.cadastro-form input:focus,
+.login-form input:focus {
+    background-color: var(--accent-blue-tint);
+}
+
+.cadastro-form input:hover::placeholder,
+.login-form input:hover::placeholder,
+.cadastro-form input:focus::placeholder,
+.login-form input:focus::placeholder {
+    color: var(--black);
+}
+
+.cadastro-form button,
+.login-form button {
+    width: 90%;
+    height: 35px;
+    margin: 10px 0px 20px 0px;
+    border: solid 3px var(--black);
+    border-radius: 5px;
+    box-shadow: 0px 5px 0px var(--black);
+    background-color: var(--accent-blue-tint);
+    transition: box-shadow .2s ease-out,
+                transform .2s ease,
+                background-color .3s ease-out;
+    outline: none;
+    outline-offset: none;
+    cursor: pointer;
+}
+.cadastro-form button:hover,
+.login-form button:hover {
+    box-shadow: 0px 0px 0px var(--black);
+    background-color: var(--accent-blue);
+    transform: translateY(5px);
+}
+
+form > p {
+    font-size: smaller;
+}
+
+form > p a {
+    color: var(--accent-deep);
+}

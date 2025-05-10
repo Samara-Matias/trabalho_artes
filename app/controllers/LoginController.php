@@ -15,7 +15,8 @@ class Login extends Controller {
                     $usuarioEncontrado = $usuario->first($arr);
                     
                     if($usuarioEncontrado && password_verify($senha, $usuarioEncontrado['senha'])) { 
-                        $_SESSION['usuario'] = $usuarioEncontrado;
+                        $_SESSION['usuario'] = $usuarioEncontrado['nomeUsuario'];
+                        $_SESSION['email'] = $usuarioEncontrado['email'];
                         Helper::redirecionar('dashboard');
                         exit;
                     } else {
