@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - ToDo List</title>
+    <title>Cadastro - Focus List</title>
 
     <link rel="stylesheet" href="<?= BASE_URL ?>/css/loginCadastro.css">
 </head>
 <body>
     
     <main>
-        <aside class="form-image-decotation">
+        <aside class="form-image-decoration">
     
         </aside>
         

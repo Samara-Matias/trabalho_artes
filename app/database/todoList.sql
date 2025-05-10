@@ -14,4 +14,25 @@ CREATE TABLE usuario (
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB;
+
+-- Criando tabela das lista de tarefas
+CREATE TABLE lista (
+    lista_id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(50) NOT NULL UNIQUE,
+    descricao VARCHAR(200),
+    usuario_id INT NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(userId) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- Criando tabela das tarefas de cada lista de tarefas
+
+CREATE TABLE tarefa (
+    tarefa_id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(50) NOT NULL UNIQUE,
+    descricao VARCHAR(200),
+    lista_id INT NOT NULL,
+    prioridade ENUM ('Alta', 'Média', 'Baixa', 'Nenhuma') NOT NULL,
+    status_tarefa ENUM ('Pendente', 'Em endamento', 'Concluída') NOT NULL,
+    FOREIGN KEY (lista_id) REFERENCES lista (lista_id) ON DELETE CASCADE
+) ENGINE=InnoDB;

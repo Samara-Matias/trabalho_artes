@@ -51,7 +51,7 @@ main{
     border-radius: 15px;
 }
 
-.form-image-decotation {
+.form-image-decoration {
     width: 100%;
     height: 100%;
     background-color:hsla(210,20%,97%,1);
@@ -64,7 +64,7 @@ main{
     radial-gradient(at 74% 100%, hsla(340,100%,38%,1) 0px, transparent 50%),
     radial-gradient(at 9% 0%, hsla(274,100%,38%,1) 0px, transparent 50%);
     border-radius: 10px;
-    /* box-shadow: 5px 5px 0px var(--black); */
+    border: solid 3px var(--black)
 }
 
 .form {
@@ -79,11 +79,16 @@ main{
     height: 60%;
     padding: 10px;
 }
+
+.form-header {
+    text-align: center;
+}
 .form-header > p{
     color: var(--dark-gray);
 }
 
 .cadastro-form input,
+.login-form input,
 .form-image-decotation {
     border: solid 3px var(--black);
 }
@@ -145,6 +150,7 @@ main{
                 background-color .3s ease-out;
     outline: none;
     outline-offset: none;
+    cursor: pointer;
 }
 .cadastro-form button:hover,
 .login-form button:hover {
