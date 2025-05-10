@@ -1,5 +1,5 @@
 
-export async function httpRequest(options){
+export async function httpRequest(url, options){
     // para options, passe um objeto com o method, url, os headers e body
     // espera PUT, DELETE, GET OU POST
     const returnObject = {
