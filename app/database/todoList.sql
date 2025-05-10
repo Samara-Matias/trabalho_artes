@@ -32,7 +32,7 @@ CREATE TABLE tarefa (
     titulo VARCHAR(50) NOT NULL UNIQUE,
     descricao VARCHAR(200),
     lista_id INT NOT NULL,
-    prioridade ENUM ('Alta', 'Média', 'Baixa', 'Nenhuma') NOT NULL,
-    status_tarefa ENUM ('Pendente', 'Em endamento', 'Concluída') NOT NULL,
+    prioridade ENUM ('Alta', 'Média', 'Baixa', 'Nenhuma') DEFAULT 'Nenhuma',
+    status_tarefa ENUM ('Pendente', 'Em endamento', 'Concluída', 'Criada') DEFAULT 'Criada',
     FOREIGN KEY (lista_id) REFERENCES lista (lista_id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
