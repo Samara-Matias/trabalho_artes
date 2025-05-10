@@ -1,5 +1,5 @@
 
-export async function httpRequest(url, options){
+export async function httpRequest(options){
     // para options, passe um objeto com o method, url, os headers e body
     // espera PUT, DELETE, GET OU POST
     const returnObject = {
@@ -8,7 +8,11 @@ export async function httpRequest(url, options){
         };
 
     try {
-        const response = await fetch(url, options);
+        const response = await fetch(options.url, {
+            method: options.method, 
+            headers: options.headers,
+            body: options.body
+        });
 
         returnObject.statusCode = response.status;
         
