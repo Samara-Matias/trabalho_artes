@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'Junction Regular';
+    src: url('../assets/fontes/junction/junction-regular.woff');
+}
+@font-face {
+    font-family: 'Junction Bold';
+    src: url('../assets/fontes/junction/junction-bold.woff');
+}
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('../assets/fontes/Poppins/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'Poppins Black';
+    src: url('../assets/fontes/Poppins/Poppins-Black.ttf');
+}
+
 :root {
     /* Neutros */
     --white              : hsl(210, 20%, 97%);
@@ -21,4 +38,8 @@
     --accent-deep        : hsl(274, 82%, 54%);
     --accent-deep-tint   : hsl(274, 82%, 73%);
     --accent-deep-shade  : hsl(274, 82%, 34%);
+
+    --fonte-principal    : 'Poppins Regular';
+    --fonte-destaque     : 'Junction Bold';
+    --fonte-destaque2    : 'Poppins Black';
 }
