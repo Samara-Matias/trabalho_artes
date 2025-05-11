@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Junction Regular';
     src: url('../assets/fontes/junction/junction-regular.woff');
@@ -38,6 +40,8 @@
     --accent-deep        : hsl(274, 82%, 54%);
     --accent-deep-tint   : hsl(274, 82%, 73%);
     --accent-deep-shade  : hsl(274, 82%, 34%);
+
+
 
     --fonte-principal    : 'Poppins Regular';
     --fonte-destaque     : 'Junction Bold';
