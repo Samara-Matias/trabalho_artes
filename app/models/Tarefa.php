@@ -13,6 +13,6 @@ class Tarefa extends Model
         'descricao',
         'lista_id',
         'prioridade',
-        'status'
+        'status_tarefa'
     ];
 }
