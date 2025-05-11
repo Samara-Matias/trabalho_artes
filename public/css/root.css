@@ -43,3 +43,23 @@
     --fonte-destaque     : 'Junction Bold';
     --fonte-destaque2    : 'Poppins Black';
 }
+
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-destaque2);
+    color: var(--black);
+}
+input,
+button {
+    font-family: var(--fonte-destaque);
+}
+ul{
+    list-style: none;
+}

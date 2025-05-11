@@ -1,2 +1,52 @@
 @import url(./root.css);
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--white);
+}
+
+body {
+    background-color: var(--black);
+    min-height: 100vh;
+}
+
+nav,
+nav ul {
+    justify-content: space-between;
+}
+
+nav,
+nav ul,
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    border-bottom: solid .3px var(--dark-gray);
+}
+
+nav ul li {
+    margin: 10px;
+    padding: 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--white);
+}
+nav ul li:hover {
+    background-color: var(--accent-blue-tint);
+    border-radius: 10px;
+    padding: 5px;
+    & > a {
+        color: var(--dark-gray);
+    }
+}
+
+
+nav h2 {
+    font-size: 1.2rem;
+}
