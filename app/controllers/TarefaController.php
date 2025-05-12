@@ -8,6 +8,7 @@ class TarefaController extends Controller {
 
     public function criarTarefa() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $tarefa = new Tarefa();
             try {
                 if (empty($_POST['titulo'])) {
                     throw new Exception("Título é obrigatório");
@@ -21,7 +22,6 @@ class TarefaController extends Controller {
                                     : 'Nenhuma',
                     'status_tarefa' => 'Criada'
                 ];
-                $tarefa = new Tarefa();
                 $tarefa->insert($dados);
                 Helper::redirecionar('tarefa?lista_id=' . $dados['lista_id']);
             } catch (Exception $erro) {
@@ -49,38 +49,37 @@ class TarefaController extends Controller {
     }
 
     public function excluirTarefa($id) {
+        $tarefa = new Tarefa();
         try {
             $tarefaExistente = $this->obterTarefa($id);
-            $tarefa = new Tarefa();
             $tarefa->delete($id, 'tarefa_id');
             Helper::redirecionar('tarefa?lista_id=' . $tarefaExistente['lista_id']);
         } catch (Exception $erro) {
-            $tarefa = new Tarefa();
             $tarefa->erros = [$erro->getMessage()];
             $this->view('tarefa', ['erros' => $tarefa->erros]);
         }
     }
 
     public function editarTarefa($id) {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+            parse_str(file_get_contents("php://input"), $_PUT);
+            $tarefa = new Tarefa();
             try {
                 $tarefaExistente = $this->obterTarefa($id);
-                if (empty($_POST['titulo'])) {
+                if (empty($_PUT['titulo'])) {
                     throw new Exception("Título é obrigatório");
                 }
                 $dados = [
-                    'titulo' => $_POST['titulo'],
-                    'descricao' => $_POST['descricao'] ?? '',
-                    'prioridade' => in_array($_POST['prioridade'], ['Alta', 'Média', 'Baixa', 'Nenhuma']) 
-                                    ? $_POST['prioridade'] 
+                    'titulo' => $_PUT['titulo'],
+                    'descricao' => $_PUT['descricao'] ?? '',
+                    'prioridade' => in_array($_PUT['prioridade'], ['Alta', 'Média', 'Baixa', 'Nenhuma']) 
+                                    ? $_PUT['prioridade'] 
                                     : 'Nenhuma',
-                    'status_tarefa' => $_POST['status_tarefa'] ?? 'Criada'
+                    'status_tarefa' => $_PUT['status_tarefa'] ?? 'Criada'
                 ];
-                $tarefa = new Tarefa();
                 $tarefa->update($id, $dados, 'tarefa_id');
                 Helper::redirecionar('tarefa?lista_id=' . $tarefaExistente['lista_id']);
             } catch (Exception $erro) {
-                $tarefa = new Tarefa();
                 $tarefa->erros = [$erro->getMessage()];
                 $this->view('tarefa', ['erros' => $tarefa->erros]);
             }
