@@ -34,7 +34,7 @@
         </ul>
         <div class="user_control" onclick="toggleMenu()">
             
-            <p class="username"><?= $_SESSION['usuario']?></p>
+            <p class="username">Usuário</p>
             <img src="<?= BASE_URL ?>/assets/imagens/dropdownIcon.svg" alt="Chevron Down Icon BOXICON">
             
         </div>
@@ -48,7 +48,7 @@
                     <a href="<?= BASE_URL ?>/logout">Logout</a>
                 </div>
             </div>
-
+            
         </div>
     </nav>
 
@@ -82,26 +82,26 @@
                     <div class="card__content">
                         <p class="tarefas_pendentes card_content__text">0/0</p>
                     </div>
-
+                    
                 </div>
-
+                
                 <div class="progresso__card">
-
+                    
                     <div class="card__header">
                         <h3 class="card_header__title">Tarefas em progresso</h3>
                     </div>
-
+                    
                     <div class="card__content">
                         <p class="tarefas_em_progresso card_content__text">0/0</p>
                     </div>
 
                 </div>
-
+                
             </div>
-
+            
         </div>
-
-
+        
+        
         <div id="lista_tarefas__container">
             <div class="lista_tarefas__header">
                 <button id="addLista">Adicionar lista</button>
@@ -113,6 +113,7 @@
 
                     <div class="lista_tarefa__header">
                         <h3>Nome da lista</h3>
+                        <img src="<?= BASE_URL ?>/assets/imagens/dropdownIcon.svg" alt="Chevron Down Icon BOXICON">
                     </div>
 
                     <div class="lista_tarefa__content">
