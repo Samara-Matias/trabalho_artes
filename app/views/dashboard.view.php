@@ -113,7 +113,7 @@
 
                     <div class="lista_tarefa__header">
                         <h3>Nome da lista</h3>
-                        <img src="<?= BASE_URL ?>/assets/imagens/dropdownIcon.svg" alt="Chevron Down Icon BOXICON">
+                        <img src="<?= BASE_URL ?>/assets/imagens/dropdownIcon.svg" alt="Drop Down Icon">
                     </div>
 
                     <div class="lista_tarefa__content">
@@ -125,9 +125,12 @@
                             </div>
 
                             <div class="actions">
-                                <button id="edit_t1">Editar</button>
+                                <button id="edit_t1" title="Editar">
+                                    <img src="<?= BASE_URL ?>/assets/imagens/editIcon.svg" alt="Edit Icon"></button>
                                 <!-- Usar outro método de diferenciação dos botões de cada tarefa -->
-                                <button id="remove_t1">Deletar</button>
+                                <button id="remove_t1" title="Deletar">
+                                    <img src="<?= BASE_URL ?>/assets/imagens/deleteIcon.svg" alt="Delete Icon">
+                                </button>
                             </div>
 
                         </div>

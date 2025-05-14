@@ -217,7 +217,6 @@ main {
 
 .lista_tarefa {
     border-radius: 10px;
-    background-color: var(--dark-gray-var);
     cursor: pointer;
 }
 
@@ -233,4 +232,61 @@ main {
         font-family: var(--fonte-principal);
         letter-spacing: 0.75px;
     }
+}
+
+.lista_tarefa__content {
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--dark-gray-var);
+}
+
+.lista_tarefa__tarefa {
+    margin: 10px 0px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+}
+
+.tarefa {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3px;
+}
+
+.tarefa_title {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.status_tarefa {
+    text-align: center;
+    font-size: small;
+    padding: 5px;
+    background-color: var(--accent-deep);
+    border-radius: 2px;
+}
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.actions button {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-color: var(--dark-gray);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.actions button:hover {
+    transition: background-color .3s ease-in-out;
+    background-color: var(--accent-pink-shade);
 }

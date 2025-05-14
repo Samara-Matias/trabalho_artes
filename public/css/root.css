@@ -19,7 +19,7 @@
     /* Neutros */
     --white              : hsl(210, 20%, 97%);
     --light-gray         : hsl(0, 0%, 78%);
-    --dark-gray          : hsl(240, 2%, 20%);
+    --dark-gray          : hsl(240, 2%, 16%);
     --dark-gray-var      : hsl(240, 2%, 8%);
     --black              : hsl(240, 100%, 0.5%);
 
