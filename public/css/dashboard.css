@@ -1,2 +1,292 @@
 @import url(./root.css);
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--white);
+}
+
+body {
+    background-color: var(--black);
+    min-height: 100vh;
+}
+
+nav,
+nav ul,
+nav ul li,
+.user_control {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    padding: 5px 30px;
+    margin-bottom: 20px;
+    position: relative;
+    border-bottom: solid .3px var(--dark-gray);
+    justify-content: space-between;
+}
+
+nav ul,
+.user_control {
+    padding: 5px 10px;
+    justify-content: right;
+}
+
+nav ul li {
+    margin:  10px;
+    padding:  10px;
+    transition: background-color .5s ease-out;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-family: var(--fonte-destaque);
+    color: var(--white);
+    transition: color .5s ease-out; 
+}
+nav ul li:hover {
+    background-color: var(--dark-gray);
+    & > a {
+        color: var(--accent-blue-tint);
+    }
+}
+
+nav h2 {
+    font-size: 20px;
+    font-style: var(--fonte-destaque);
+}
+
+.user_control {
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--dark-gray);
+    border-radius: 5px;
+    & > .username {
+        margin-right: 10px;
+        font-family: var(--fonte-destaque);
+    }
+}
+.rotacionar {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 30px;
+    width: 220px;
+    overflow: hidden;
+    height: 0px;
+    transition: height .5s ease-in-out;
+}
+
+.sub-menu-wrap.open-menu{
+    height: 200px;
+}
+
+.sub-menu {
+    padding: 15px 20px 30px 20px;
+    margin: 10px;
+    background-color: var(--white);
+}
+
+.user-info .username{
+    margin-bottom: 5px;
+    color: var(--accent-deep);
+    font-family: var(--fonte-destaque2);
+    font-size: 24px;
+}
+.user-info hr{
+    margin-bottom: 20px;
+}
+
+.user-info a {
+    padding: 10px;
+    border: solid 3px var(--dark-gray);
+    border-radius: 5px;
+    background-color: transparent;
+    text-decoration: none;
+    font-family: var(--fonte-destaque);
+    color: var(--black);
+    transition: background-color .3s ease-out;
+}
+.user-info a:hover {
+    background-color: var(--accent-pink-tint);
+}
+
+main {
+    min-height: 50vh;
+    padding: 20px 25vw;
+}
+
+.main__header {
+    width: 100%;
+    margin: 30px 0px;
+    & > h1 {
+        background: linear-gradient(90deg,var(--accent-blue),var(--accent-pink),var(--accent-purple), var(--accent-deep));
+        background-clip: text;
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.main__progresso_container {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.progresso {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.progresso__card {
+    border: solid .5px var(--dark-gray);
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px var(--light-gray);
+}
+
+.card__header {
+    padding: 5px 10px;
+    & > .card_header__title {
+        font-family: var(--fonte-principal);
+        font-size: medium;
+        color: var(--accent-blue);
+    }
+    border-bottom: solid .5px var(--dark-gray);
+}
+
+.card__content {
+    padding: 10px;
+    & > .card_content__text{
+        color: var(--white);
+        text-align: center;
+        font-size: 35px;
+        font-family: var(--fonte-destaque2);
+    }
+}
+
+.main__lista_tarefas_container {
+    width: 100%;
+    padding: 20px 10px;
+}
+
+#lista_tarefas__container {
+    width: 100%;
+    border: solid .3px var(--dark-gray);
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+.lista_tarefas__header {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border-bottom: solid .3px var(--dark-gray);
+
+    & > button {
+        width: 150px;
+        padding: 10px 5px;
+        margin: 0px 5px;
+        background-color: var(--black);
+        border: solid 2.5px var(--accent-pink-shade);
+        color: var(--white);
+        border-radius: 10px;
+        outline: none;
+        offset: none;
+        cursor: pointer;
+
+        transition: background-color .3s ease-in-out;
+    }
+    & > button:hover {
+        background-color: var(--accent-pink-shade);
+    }
+}
+
+.lista_tarefas {
+    padding: 20px;
+}
+
+.lista_tarefa {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.lista_tarefa__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-gray);
+    border-radius: 10px 10px 0px 0px;
+    padding: 15px;
+    & > h3 {
+        color: var(--light-gray);
+        font-family: var(--fonte-principal);
+        letter-spacing: 0.75px;
+    }
+}
+
+.lista_tarefa__content {
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--dark-gray-var);
+}
+
+.lista_tarefa__tarefa {
+    margin: 10px 0px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+}
+
+.tarefa {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3px;
+}
+
+.tarefa_title {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.status_tarefa {
+    text-align: center;
+    font-size: small;
+    padding: 5px;
+    background-color: var(--accent-deep);
+    border-radius: 2px;
+}
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.actions button {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-color: var(--dark-gray);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.actions button:hover {
+    transition: background-color .3s ease-in-out;
+    background-color: var(--accent-pink-shade);
+}

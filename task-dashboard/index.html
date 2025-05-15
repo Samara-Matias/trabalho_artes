@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMaster - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <i class="fa-solid fa-list-check"></i>
+          <span>TaskMaster</span>
+        </div>
+      </div>
+      
+      <div class="sidebar-content">
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu-item active">
+            <a href="#" class="sidebar-menu-button">
+              <i class="fa-solid fa-house"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-button">
+              <i class="fa-solid fa-list-check"></i>
+              <span>Minhas Tarefas</span>
+            </a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-button">
+              <i class="fa-solid fa-star"></i>
+              <span>Importantes</span>
+            </a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-button">
+              <i class="fa-solid fa-gear"></i>
+              <span>Configurações</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="sidebar-footer">
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-button">
+              <i class="fa-solid fa-user"></i>
+              <span>Perfil</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header class="header">
+        <button id="sidebar-toggle" class="sidebar-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h1>Dashboard</h1>
+      </header>
+
+      <main class="container">
+        <div class="stats-grid">
+          <!-- Resumo -->
+          <div class="card stats-card">
+            <div class="card-header">
+              <h3 class="card-title">Total de Tarefas</h3>
+            </div>
+            <div class="card-content">
+              <div class="stats-value" id="total-tasks">0</div>
+            </div>
+          </div>
+          
+          <div class="card stats-card">
+            <div class="card-header">
+              <h3 class="card-title">Tarefas Concluídas</h3>
+            </div>
+            <div class="card-content">
+              <div class="stats-value" id="completed-tasks">0</div>
+            </div>
+          </div>
+          
+          <div class="card stats-card">
+            <div class="card-header">
+              <h3 class="card-title">Progresso Geral</h3>
+            </div>
+            <div class="card-content">
+              <div class="stats-value" id="completion-percentage">0%</div>
+              <div class="progress-container">
+                <div class="progress-bar" id="overall-progress"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listas de tarefas -->
+        <div class="task-lists-section"> 
+          <div class="section-header">
+            <h2>Minhas Listas</h2>
+            <button class="btn btn-accent">
+              <i class="fa-solid fa-plus-circle"></i>
+              Nova Lista
+            </button>
+          </div>
+
+          <div class="task-lists" id="task-lists">
+            <!-- Task lists will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
