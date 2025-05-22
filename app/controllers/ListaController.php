@@ -1,4 +1,6 @@
 <?php
+require_once '../models/Lista.php';
+
 class ListaController extends Controller {
 
     public function index() {

@@ -14,6 +14,8 @@ export async function httpRequest(options){
             body: options.body
         });
 
+        console.log("STUFF: ", response)
+
         returnObject.statusCode = response.status;
         
         const contentType = response.headers.get("content-type"); 
